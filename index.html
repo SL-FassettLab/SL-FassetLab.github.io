@@ -1,0 +1,213 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@SL-FassettLab 
+Albert-Lanier-lab-2020
+/
+Albert-Lanier-lab-2020.github.io
+Public
+Fork your own copy of Albert-Lanier-lab-2020/Albert-Lanier-lab-2020.github.io
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+Albert-Lanier-lab-2020.github.io/index.html
+
+Albert Initial commit
+Latest commit 8c5b224 on Apr 18, 2021
+ History
+ 0 contributors
+5986 lines (5951 sloc)  308 KB
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+* {
+  box-sizing: border-box;
+}
+
+#MouseInput {
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#HumanInput {
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#Mouse {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#Mouse th, #Mouse td {
+  text-align: left;
+  padding: 12px;
+}
+
+#Mouse tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#Mouse tr.header, #Mouse tr:hover {
+  background-color: #f1f1f1;
+}
+#Human {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#Human th, #Human td {
+  text-align: left;
+  padding: 12px;
+}
+
+#Human tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#Human tr.header, #Human tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<img src="https://www.ucsf.edu/sites/default/files/legacy_files/lanier_282-vs2.jpg" width="150" height="200" align="right">
+
+<h1>Lanier Lab Antibody List</h1> 
+</h3> Updated: 4/18/21</h3>
+<h1> </h1>
+
+
+
+<script>
+function tab(evt, name) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(name).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+function MouseFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("MouseInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("Mouse");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) == 0) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+function HumanFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("HumanInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("Human");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) == 0) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+</body>
+</html> 
